@@ -16,10 +16,11 @@ import java.util.List;
 public class RatingResource {
 
     @RequestMapping("{movieId}")
-    public List<Rating> getRating(@PathVariable("movieId") String movieId){
-        return Collections.singletonList(
-            new Rating("1", 5)
-        );
+    public Rating getRating(@PathVariable("movieId") String movieId){
+//        return Collections.singletonList(
+//            new Rating("1", 5)
+//        );
+        return new Rating(movieId, 5);
     }
 
 

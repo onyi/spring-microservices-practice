@@ -10,15 +10,16 @@ import java.util.List;
 import com.biohazard.microservices.movieinfoservice.models.Movie;
 
 @RestController
-@RequestMapping("/movie")
+@RequestMapping("/movies")
 
 public class MovieResource {
 
     @RequestMapping("{movieId}")
-    public List<Movie> getMovie(@PathVariable("movieId") String movieId){
-        return Collections.singletonList(
-            new Movie("1", "Hi")
-        );
+    public Movie getMovie(@PathVariable("movieId") String movieId){
+//        return Collections.singletonList(
+//            new Movie(movieId, "Hi")
+//        );
+        return new Movie(movieId, "Hi");
     }
 }
 
