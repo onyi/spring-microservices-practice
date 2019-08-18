@@ -11,7 +11,7 @@ import com.biohazard.microservices.ratingdataservice.models.Rating;
 import java.util.List;
 
 @RestController
-@RequestMapping('/rating')
+@RequestMapping("/rating")
 
 public class RatingResource {
 
@@ -19,7 +19,7 @@ public class RatingResource {
     public List<Rating> getRating(@PathVariable("movieId") String movieId){
         return Collections.singletonList(
             new Rating("1", 5)
-        )
+        );
     }
 
 
