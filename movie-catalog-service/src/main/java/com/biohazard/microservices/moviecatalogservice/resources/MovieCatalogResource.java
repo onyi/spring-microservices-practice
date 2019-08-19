@@ -40,7 +40,7 @@ public class MovieCatalogResource {
 //        );
 
         UserRating ratings = restTemplate.getForObject(
-                RATING_SERVICE_URL + userId,
+                RATING_SERVICE_URL + "users/" + userId,
                 UserRating.class
         );
 
