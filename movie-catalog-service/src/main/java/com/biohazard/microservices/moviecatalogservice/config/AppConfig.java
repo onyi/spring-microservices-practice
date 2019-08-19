@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
 public class AppConfig {
@@ -16,5 +17,10 @@ public class AppConfig {
         converter.setObjectMapper(new ObjectMapper());
         restTemplate.getMessageConverters().add(converter);
         return restTemplate;
+    }
+
+    @Bean
+    public WebClient.Builder getWebClientBuilder(){
+        return WebClient.builder();
     }
 }
