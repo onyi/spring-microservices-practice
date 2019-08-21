@@ -26,8 +26,8 @@ public class MovieCatalogResource {
     @Autowired
     WebClient.Builder webClientBuilder;
 
-    String MOVIE_SERVICE_URL = "http://localhost:8081/movies/";
-    String RATING_SERVICE_URL = "http://localhost:8082/ratings/";
+    String MOVIE_SERVICE_URL = "http://movie-info-service/movies/";
+    String RATING_SERVICE_URL = "http://rating-data-service/ratings/";
 
     @RequestMapping("/{userId}")
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId){
