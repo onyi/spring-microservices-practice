@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.biohazard.microservices.ratingdataservice.models.Rating;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -19,7 +20,7 @@ public class RatingResource {
     RatingRepository ratingRepository;
 
     @GetMapping(path = "ratings/{movieId}")
-    public Rating getRating(@PathVariable("movieId") String movieId){
+    public Rating getRating(@PathVariable("movieId") Integer movieId){
 //        return Collections.singletonList(
 //            new Rating("1", 5)
 //        );
@@ -30,8 +31,8 @@ public class RatingResource {
     @GetMapping(path = "ratings/users/{userId}")
     public UserRating getUserRating(@PathVariable("userId") String userId){
         List<Rating> ratings = Arrays.asList(
-                new Rating("1234", 5),
-                new Rating("5678", 4)
+                new Rating(1234, 5),
+                new Rating(5678, 4)
         );
         UserRating userRating = new UserRating();
         userRating.setUserRating(ratings);
@@ -39,7 +40,7 @@ public class RatingResource {
     }
 
     @PostMapping(path = "ratings")
-    public Rating createRating(@RequestBody Rating rating){
+    public Rating createRating(@Valid @RequestBody Rating rating){
 
         return ratingRepository.save(rating);
     }
