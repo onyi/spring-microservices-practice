@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"><head>
+    <meta charset="UTF-8">
+    <title>Hello World from SSO Server</title>
+</head>
+<body>
+    <h3>Helloworld! </h3>
+<!--    <p th:text="Current time: ${#dates.format(#dates.createNow(),'YYYY/MM/dd HH:mm')}"></p>-->
+    <p th:text="Current time: ${execInfo.now}"></p>
+
+</body>
+</html>
